@@ -26,7 +26,7 @@ export const getUser = async (req, res, next) => {
 
 export const addUser = async (req, res, next) => {
     if (!req.body.username || !req.body.password) {
-        return res.status(404).json("Empty Body!")
+        return res.json("Empty Body!")
     }
     try {
         if (userModel.find({ username: req.body.username })) {
@@ -65,4 +65,8 @@ export const deleteUser = async (req, res, next) => {
     catch (error) {
         next(error)
     }
+}
+
+export const addTodo = async(req,res,next)=>{
+    
 }

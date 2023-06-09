@@ -7,7 +7,7 @@ import dbConnection from "./database/dbConnection.js";
 const app = express();
 app.use(express.json())
 app.use(cors())
-
+app.get('/', (req,res)=>{res.send("Server Running")})
 app.use('/user', userRouter)
 app.listen(process.env.PORT, () => {
     dbConnection();
